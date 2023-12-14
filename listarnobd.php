@@ -4,7 +4,7 @@
 require_once ('conexao.php');
 
 // Montar o código SQL
-$sql = 'SELECT * FROM receita';
+$sql = 'SELECT * FROM Receita';
 
 $listarnobd = BuscarNoBD($sql);
 

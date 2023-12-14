@@ -8,7 +8,7 @@ $nome_receita = $_POST['nome'];
 $data_receita = $_POST['data'];
 $fonte_receita = $_POST['fonte'];
 
-$sql = "UPDATE receita
+$sql = "UPDATE Receita
 SET nome = '$nome_receita',
 data = '$data_receita',
 fonte = '$fonte_receita'
