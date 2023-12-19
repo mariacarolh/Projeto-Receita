@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Receitas da Vó</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
@@ -34,12 +34,12 @@
           </li>
       
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="listareceitas.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Menu Receitas
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="#">Editar</a></li>
-              <li><a class="dropdown-item" href="#">Deletar</a></li>
+              <li><a class="dropdown-item" href="editareceitas.php">Editar</a></li>
+              <li><a class="dropdown-item" href="deletareceitas.php">Deletar</a></li>
               <li><a class="dropdown-item" href="cadastrareceitas.php">Cadastrar</a></li>
               <li>
                 <hr class="dropdown-divider">

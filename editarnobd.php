@@ -12,8 +12,6 @@ $sql = "UPDATE Receita
 SET nome = '$nome_receita',
 data = '$data_receita',
 fonte = '$fonte_receita'
-WHERE id = $id_receita;";
+WHERE codigo_receita = $id_receita;";
 
 ExecutarnoBD($sql);
-
-?>

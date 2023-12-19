@@ -1,9 +1,10 @@
 <?php
-$nome_receita = $_POST["nome"];
-$data_receita = $_POST["data"];
-$fonte_receita = $_POST["fonte"];
+$nome = $_POST["nome"];
+$fonte = $_POST['fonte'];
+$data = $_POST["data"];
+
 
 require_once("conexao.php");
-$sql = "INSERT INTO Receita (nome, data) VALUES ('$nome_receita', '$data_receita', '$fonte_receita')";
+$sql = "INSERT INTO receitas (nome, fonte, data) VALUES ('$nome', '$fonte', '$data')";
 
 ExecutarnoBD($sql);

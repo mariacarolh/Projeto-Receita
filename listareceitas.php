@@ -33,7 +33,7 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="listareceitas.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Menu Receitas
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark">
@@ -72,42 +72,30 @@
 
     <!-- Formulário -->
     <div class="container mt-5">
-        <h2>Cadastrar Receita</h2>
+        <h2>Editar Receitas</h2>
         <hr>
         <hr>
 
-        <form action="criarnobd.php" method="POST">
+    <div class="row g-3">
+  <div class="col-sm-7">
+    <b>Nome</b>
 
-            <!DOCTYPE html>
-            <html lang="en">
+    <input type="text" class="form-control" placeholder="Ex: Strogonoff de frango" aria-label="City">
+  </div>
+  <div class="col-sm">
+  <b>Fonte</b>
+    <input type="text" class="form-control" placeholder="Ex: Youtube" aria-label="State">
+  </div>
+  <div class="col-sm">
+  <b>Data</b>
+    <input type="date" class="form-control" placeholder="Zip" aria-label="">
+  </div>
+  <div class="d-grid gap-2 col-6 mx-auto">
+  <button class="btn btn-dark" type="button">Cadastrar</button>
 
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            </head>
-
-            <body>
-
-                <div class="row g-3">
-                    <div class="col-sm-7">
-                        <form action="criarnobd.php" method="POST">
-                            <b>Nome</b>
-                            <input type="text" class="form-control" name="nome" placeholder="Ex: Strogonoff de frango" aria-label="City">
-                    </div>
-                    <div class="col-sm">
-                        <b>Fonte</b>
-                        <input type="text" class="form-control" name="fonte" placeholder="Ex: Youtube" aria-label="State">
-                    </div>
-                    <div class="col-sm">
-                        <b>Data</b>
-                        <input type="date" class="form-control" name="data" aria-label="">
-                    </div>
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-dark" type="submit">Cadastrar</button>
-        </form>
-    </div>
-    </div>
-
+</div>
+</div>
 </body>
 
+</html>
 </html>

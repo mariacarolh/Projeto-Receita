@@ -1,18 +1,18 @@
-<?
+<?php
 
-function GerarConexao(){
-$nomedoservidor = "localhost";
-$nomedousuario = "root";
-$senha = "";
-$banco = "projetoreceita";
+function GerarConexao()
+{
+    $nomedoservidor = "localhost";
+    $nomedousuario = "root";
+    $senha = "";
+    $banco = "projetoreceita";
 
-$conexao = mysqli_connect($nomedoservidor, $nomedousuario, $senha, $banco);
+    $conexao = mysqli_connect($nomedoservidor, $nomedousuario, $senha, $banco);
 
-return $conexao;
-
+    return $conexao;
 }
-
-function ExecutarnoBD($sql){
+function ExecutarnoBD($sql)
+{
 
     $conexao = GerarConexao();
 
@@ -23,17 +23,16 @@ function ExecutarnoBD($sql){
     mysqli_close($conexao);
 }
 
-function BuscarNoBD($sql){
+function BuscarNoBD($sql)
+{
 
     $conexao = GerarConexao();
     // Executar o código
-$resultado = mysqli_query($conexao, $sql);
+    $resultado = mysqli_query($conexao, $sql);
 
-// Converter o resultado para um tipo que a gente entenda
-// Arrays
+    // Converter o resultado para um tipo que a gente entenda
+    // Arrays
 
-$lista = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
-return $lista;
-
+    $lista = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
+    return $lista;
 }
-?>
