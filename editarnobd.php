@@ -15,3 +15,5 @@ fonte = '$fonte_receita'
 WHERE codigo_receita = $id_receita;";
 
 ExecutarnoBD($sql);
+?>
+

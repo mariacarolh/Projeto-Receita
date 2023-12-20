@@ -1,3 +1,13 @@
+<?php
+// Pegar/puxar conexão
+require_once('conexao.php');
+
+// Comando dbo
+$sql = 'SELECT * FROM receitas';
+
+$listareceitas = BuscarNoBD($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,43 +69,38 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Adicione suas meta tags e links de estilo e script aqui -->
-</head>
 
 <body>
-    <!-- Navbar -->
+
     <nav class="navbar navbar-dark bg-dark fixed-top">
-        <!-- Conteúdo da Navbar -->
     </nav>
-    <!-- Fim da Navbar -->
+    <h2>Editar Receitas</h2>
+    <hr>
+    <hr>
 
-    <!-- Formulário -->
-    <div class="container mt-5">
-        <h2>Editar Receitas</h2>
-        <hr>
-        <hr>
+    <?php
 
-    <div class="row g-3">
-  <div class="col-sm-7">
-    <b>Nome</b>
+    foreach ($listareceitas as $linha) {
+        echo "<h3>Código da receita: </h3>";
+        echo $linha['codigo_receita'];
 
-    <input type="text" class="form-control" placeholder="Ex: Strogonoff de frango" aria-label="City">
-  </div>
-  <div class="col-sm">
-  <b>Fonte</b>
-    <input type="text" class="form-control" placeholder="Ex: Youtube" aria-label="State">
-  </div>
-  <div class="col-sm">
-  <b>Data</b>
-    <input type="date" class="form-control" placeholder="Zip" aria-label="">
-  </div>
-  <div class="d-grid gap-2 col-6 mx-auto">
-  <button class="btn btn-dark" type="button">Cadastrar</button>
+        echo "<h1Nome: </h1>";
+        echo $linha['nome'];
 
-</div>
-</div>
+        echo "<h3>Fonte da receita: </h3>";
+        echo $linha['fonte'];
+
+        echo "<h3>Data de Publicação: </h3>";
+        echo $linha['data'];
+
+        echo '<br><br>';
+        echo "<a href='deletareceitas.php?id={$linha['codigo_receita']};' >Deletar tarefa</a>";
+        echo '<br><br>';
+        echo "<a href='editartarefa.php?id={$linha['codigo_receita']};' >Editar tarefa</a>";
+        echo '<br><br>';
+    }
+
+    ?>
 </body>
 
-</html>
 </html>
