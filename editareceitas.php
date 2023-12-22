@@ -72,31 +72,43 @@
 
     <!-- Formulário -->
     <div class="container mt-5">
-        <h2>Editar Receitas</h2>
+        <h2>Editar Dados</h2>
         <hr>
         <hr>
 
-        <div class="row g-3">
-            <div class="col-sm-7">
-                <b>Nome</b>
+        <form action="editarnobd.php" method="POST">
+            <input type="hidden" name="codigo_receita" value="<?php echo $_GET['codigo_receita'] ?>">
 
-                <input type="text" class="form-control" placeholder="Ex: Strogonoff de frango" aria-label="City">
-            </div>
-            <div class="col-sm">
-                <b>Fonte</b>
-                <input type="text" class="form-control" placeholder="Ex: Youtube" aria-label="State">
-            </div>
-            <div class="col-sm">
-                <b>Data</b>
-                <input type="date" class="form-control" placeholder="Zip" aria-label="">
-            </div>
-            <div class="d-grid gap-2 col-6 mx-auto">
-                <button class="btn btn-dark" type="button">Cadastrar</button>
+            <!DOCTYPE html>
+            <html lang="en">
 
-            </div>
-        </div>
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            </head>
+
+            <body>
+
+                <div class="row g-3">
+                    <div class="col-sm-7">
+                        <form action="editarnobd.php" method="POST">
+                            <b>Nome</b>
+                            <input type="text" class="form-control" name="nome" placeholder="Ex: Strogonoff de frango" aria-label="City">
+                    </div>
+                    <div class="col-sm">
+                        <b>Fonte</b>
+                        <input type="text" class="form-control" name="fonte" placeholder="Ex: Youtube" aria-label="State">
+                    </div>
+                    <div class="col-sm">
+                        <b>Data</b>
+                        <input type="date" class="form-control" name="data" aria-label="">
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-dark" type="submit">Alterar</button>
+        </form>
+    </div>
+    </div>
+
 </body>
-
-</html>
 
 </html>

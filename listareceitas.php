@@ -81,22 +81,22 @@ $listareceitas = BuscarNoBD($sql);
     <?php
 
     foreach ($listareceitas as $linha) {
-        echo "<h3>Código da receita: </h3>";
+        echo "<b><p>Código da receita:</b><p>";
         echo $linha['codigo_receita'];
 
-        echo "<h1Nome: </h1>";
+        echo "<b><p>Nome da receita:</b><p>";
         echo $linha['nome'];
 
-        echo "<h3>Fonte da receita: </h3>";
+        echo "<b><p>Fonte da receita:</b><p>";
         echo $linha['fonte'];
 
-        echo "<h3>Data de Publicação: </h3>";
+        echo "<b><p>Data de Publicação: </b><p>";
         echo $linha['data'];
 
         echo '<br><br>';
-        echo "<a href='deletareceitas.php?id={$linha['codigo_receita']};' >Deletar tarefa</a>";
-        echo '<br><br>';
-        echo "<a href='editartarefa.php?id={$linha['codigo_receita']};' >Editar tarefa</a>";
+        echo "<a href='editareceitas.php?codigo_receita={$linha['codigo_receita']};' >Editar Receita</a>";
+        echo '<br>';
+        echo "<a href='deletareceitas.php?codigo_receita={$linha['codigo_receita']};' >Excluir Receita</a>";
         echo '<br><br>';
     }
 

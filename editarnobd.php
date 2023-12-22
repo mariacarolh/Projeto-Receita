@@ -1,19 +1,21 @@
 <?php
-
 // Puxa a conexão e edita
 require_once('conexao.php');
 
-$id_receita = $_POST['id'];
-$nome_receita = $_POST['nome'];
-$data_receita = $_POST['data'];
-$fonte_receita = $_POST['fonte'];
+$codigo = $_POST['codigo_receita'];
+$nome = $_POST['nome'];
+$data = $_POST['data'];
+$fonte = $_POST['fonte'];
 
-$sql = "UPDATE Receita
-SET nome = '$nome_receita',
-data = '$data_receita',
-fonte = '$fonte_receita'
-WHERE codigo_receita = $id_receita;";
+$sql = "UPDATE Receitas
+SET nome = '$nome',
+data = '$data',
+fonte = '$fonte'
+WHERE codigo_receita = $codigo;";
 
 ExecutarnoBD($sql);
-?>
 
+header("Location: listareceitas.php");
+exit;
+
+?>
