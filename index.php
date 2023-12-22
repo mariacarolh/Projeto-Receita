@@ -38,13 +38,11 @@
               Menu Receitas
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="editareceitas.php">Editar</a></li>
-              <li><a class="dropdown-item" href="deletareceitas.php">Deletar</a></li>
               <li><a class="dropdown-item" href="cadastrareceitas.php">Cadastrar</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="#">Alguma coisa</a></li>
+              <li><a class="dropdown-item" href="#">Ainda não sei :c</a></li>
             </ul>
           </li>
         </ul>

@@ -37,13 +37,11 @@
                                 Menu Receitas
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="editareceitas.php">Editar</a></li>
-                                <li><a class="dropdown-item" href="deletareceitas.php">Deletar</a></li>
                                 <li><a class="dropdown-item" href="cadastrareceitas.php">Cadastrar</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#">Ainda não sei :c</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -92,17 +90,25 @@
                     <div class="col-sm-7">
                         <form action="criarnobd.php" method="POST">
                             <b>Nome</b>
-                            <input type="text" class="form-control" name="nome" placeholder="Ex: Strogonoff de frango" aria-label="City">
+                            <input type="text" class="form-control" name="nome" placeholder="Ex: Strogonoff de frango" aria-label="State">
                     </div>
-                    <div class="col-sm">
+
+                    <div class="row g-3">
                         <b>Fonte</b>
                         <input type="text" class="form-control" name="fonte" placeholder="Ex: Youtube" aria-label="State">
                     </div>
+                    
+                    <div class="col-sm">
+                        <b>Receita</b>
+                        <input type="text" class="form-control" name="receita" placeholder="Digite aqui a sua receita" aria-label="State">
+                    </div>
+
                     <div class="col-sm">
                         <b>Data</b>
                         <input type="date" class="form-control" name="data" aria-label="">
                     </div>
-                    <div class="d-grid gap-2 col-6 mx-auto">
+
+                    <div class="d-grid gap-2 col-4 mx-auto">
                         <button class="btn btn-dark" type="submit">Cadastrar</button>
         </form>
     </div>

@@ -47,13 +47,11 @@ $listareceitas = BuscarNoBD($sql);
                                 Menu Receitas
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="editareceitas.php">Editar</a></li>
-                                <li><a class="dropdown-item" href="deletareceitas.php">Deletar</a></li>
                                 <li><a class="dropdown-item" href="cadastrareceitas.php">Cadastrar</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#">Ainda não sei :c</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -84,10 +82,13 @@ $listareceitas = BuscarNoBD($sql);
         echo "<b><p>Código da receita:</b><p>";
         echo $linha['codigo_receita'];
 
-        echo "<b><p>Nome da receita:</b><p>";
+        echo "<b><p>Nome:</b><p>";
         echo $linha['nome'];
 
-        echo "<b><p>Fonte da receita:</b><p>";
+        echo "<b><p>Receita:</b><p>";
+        echo $linha['receita'];
+
+        echo "<b><p>Fonte:</b><p>";
         echo $linha['fonte'];
 
         echo "<b><p>Data de Publicação: </b><p>";
