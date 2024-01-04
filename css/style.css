@@ -1,0 +1,10 @@
+body{
+    margin: 0;
+}
+
+#container{
+    width: 100vw;
+    height: 100vh;
+    background: url('../img/fundo01.jpg');
+    background-size: cover;
+}
