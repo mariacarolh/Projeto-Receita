@@ -55,46 +55,93 @@
         <hr>
         <hr>
 
-        <form action="criarnobd.php" method="POST">
+        <!DOCTYPE html>
+        <html lang="en">
 
-            <!DOCTYPE html>
-            <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
 
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            </head>
+        <body>
 
-            <body>
+            <div class="row g-3">
+                <div class="col-sm-7">
+                    <form action="criarnobd.php" method="POST">
+                        <b>Nome</b>
+                        <input type="text" class="form-control" name="nome" placeholder="Ex: Strogonoff de frango" aria-label="State">
+                </div>
 
                 <div class="row g-3">
-                    <div class="col-sm-7">
-                        <form action="criarnobd.php" method="POST">
-                            <b>Nome</b>
-                            <input type="text" class="form-control" name="nome" placeholder="Ex: Strogonoff de frango" aria-label="State">
+                    <b>Fonte</b>
+                    <input type="text" class="form-control" name="fonte" placeholder="Ex: Youtube" aria-label="State">
+                </div>
+
+                <div class="col-sm">
+                    <b>Receita</b>
+                    <input type="text" class="form-control" name="receita" placeholder="Digite aqui a sua receita" aria-label="State">
+                </div>
+
+                <div class="col-sm">
+                    <b>Data</b>
+                    <input type="date" class="form-control" name="data" aria-label="">
+                </div>
+
+                    //
+
+                    <div id="ingredientsSection">
+                        <h3>Ingredientes</h3>
+                        <div class="row g-3 ingredient-row">
+                            <div class="col-sm-4">
+                                <label for="ingredient">Ingrediente</label>
+                                <input type="text" class="form-control" name="ingrediente[]" placeholder="Ex: Farinha" aria-label="Ingredient">
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="quantity">Quantidade</label>
+                                <input type="text" class="form-control" name="quantidade[]" placeholder="Ex: 1 cup" aria-label="Quantity">
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="unit">Unidade</label>
+                                <input type="text" class="form-control" name="unidade[]" placeholder="Ex: Kg" aria-label="Unit">
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-danger" onclick="removeIngredient(this)">Remover</button>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="row g-3">
-                        <b>Fonte</b>
-                        <input type="text" class="form-control" name="fonte" placeholder="Ex: Youtube" aria-label="State">
-                    </div>
+                    <button type="button" class="btn btn-success mt-3" onclick="addIngredient()">Adicionar Ingrediente</button>
 
-                    <div class="col-sm">
-                        <b>Receita</b>
-                        <input type="text" class="form-control" name="receita" placeholder="Digite aqui a sua receita" aria-label="State">
-                    </div>
-
-                    <div class="col-sm">
-                        <b>Data</b>
-                        <input type="date" class="form-control" name="data" aria-label="">
-                    </div>
-
-                    <div class="d-grid gap-2 col-4 mx-auto">
+                    <!-- Submit Button -->
+                    <div class="d-grid gap-2 col-4 mx-auto mt-3">
                         <button class="btn btn-dark" type="submit">Cadastrar</button>
-        </form>
-    </div>
-    </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
 
-</body>
+            <script>
+                // JavaScript for dynamically adding/removing ingredient fields
+                function adicionaringrediente() {
+                    var ingredientsSection = document.getElementById('ingredientsSection');
+                    var newRow = ingredientsSection.querySelector('.ingredient-row').cloneNode(true);
+                    ingredientsSection.appendChild(newRow);
+                }
 
-</html>
+                function removeringrediente(button) {
+                    var ingredientsSection = document.getElementById('ingredientsSection');
+                    var row = button.parentNode.parentNode;
+                    if (ingredientsSection.childElementCount > 1) {
+                        ingredientsSection.removeChild(row);
+                    } else {
+                        // Reset the fields if only one row is left
+                        var inputs = row.querySelectorAll('input');
+                        inputs.forEach(function(input) {
+                            input.value = '';
+                        });
+                    }
+                }
+            </script>
+        </body>
+
+        </html>

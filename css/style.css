@@ -8,3 +8,8 @@ body{
     background: url('../img/fundo01.jpg');
     background-size: cover;
 }
+
+.centralizar {
+    margin: 0 auto; /* Define as margens laterais automáticas para centralizar */
+    max-width: 600px; /* Defina a largura máxima desejada para o contêiner */
+}

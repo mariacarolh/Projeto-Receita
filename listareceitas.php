@@ -15,6 +15,7 @@ $listareceitas = BuscarNoBD($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listagem</title>
+    <link rel="stylesheet" href="design.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </head>
@@ -65,33 +66,43 @@ $listareceitas = BuscarNoBD($sql);
     <h2>Editar Receitas</h2>
     <hr>
     <hr>
-
+    <div class="lista">
     <?php
+        foreach ($listareceitas as $linha) {
+            echo "<b><p>Código da receita:</b><p>";
+            echo $linha['codigo_receita'];
 
-    foreach ($listareceitas as $linha) {
-        echo "<b><p>Código da receita:</b><p>";
-        echo $linha['codigo_receita'];
+            echo "<b><p>Nome:</b><p>";
+            echo $linha['nome'];
 
-        echo "<b><p>Nome:</b><p>";
-        echo $linha['nome'];
+            echo "<b><p>Receita:</b><p>";
+            echo $linha['receita'];
 
-        echo "<b><p>Receita:</b><p>";
-        echo $linha['receita'];
+            echo "<b><p>Fonte:</b><p>";
+            echo $linha['fonte'];
 
-        echo "<b><p>Fonte:</b><p>";
-        echo $linha['fonte'];
+            echo "<b><p>Data de Publicação: </b><p>";
+            echo $linha['data'];
 
-        echo "<b><p>Data de Publicação: </b><p>";
-        echo $linha['data'];
+            echo "<b><p>Ingrediente </b><p>";
+            echo $linha['ingrediente'];
 
-        echo '<br><br>';
-        echo "<a href='editareceitas.php?codigo_receita={$linha['codigo_receita']};' >Editar Receita</a>";
-        echo '<br>';
-        echo "<a href='deletareceitas.php?codigo_receita={$linha['codigo_receita']};' >Excluir Receita</a>";
-        echo '<br><br>';
-    }
+            echo "<b><p>Qntd: </b><p>";
+            echo $linha['quantidade'];
 
-    ?>
+            echo "<b><p>Unidade: </b><p>";
+            echo $linha['unidade'];
+            
+            echo '<br><br>';
+            echo "<a href='editareceitas.php?codigo_receita={$linha['codigo_receita']};' >Editar Receita</a>";
+            echo '<br>';
+            echo "<a href='deletareceitas.php?codigo_receita={$linha['codigo_receita']};' >Excluir Receita</a>";
+            echo '<br><br>';
+        }
+        ?>
+        </div>
+       
+
 </body>
 
 </html>
