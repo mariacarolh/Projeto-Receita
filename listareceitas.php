@@ -85,7 +85,7 @@ $listareceitas = BuscarNoBD($sql);
             echo $linha['data'];
 
             echo "<b><p>Ingrediente </b><p>";
-            echo $linha['ingrediente'];
+            echo $linha['ingredientes'];
 
             echo "<b><p>Qntd: </b><p>";
             echo $linha['quantidade'];

@@ -19,9 +19,13 @@ function ExecutarnoBD($sql)
     // Executar a Query
     mysqli_query($conexao, $sql);
 
+    $id = mysqli_insert_id($conexao);
+
     // Fechar a conexão
     mysqli_close($conexao);
+    return $id;
 }
+
 
 function BuscarNoBD($sql)
 {

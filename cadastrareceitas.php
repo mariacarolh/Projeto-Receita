@@ -64,10 +64,10 @@
         </head>
 
         <body>
-
+        <form action="criarnobd.php" method="POST">
             <div class="row g-3">
                 <div class="col-sm-7">
-                    <form action="criarnobd.php" method="POST">
+          
                         <b>Nome</b>
                         <input type="text" class="form-control" name="nome" placeholder="Ex: Strogonoff de frango" aria-label="State">
                 </div>
@@ -87,61 +87,61 @@
                     <input type="date" class="form-control" name="data" aria-label="">
                 </div>
 
-                    //
+                //
 
-                    <div id="ingredientsSection">
-                        <h3>Ingredientes</h3>
-                        <div class="row g-3 ingredient-row">
-                            <div class="col-sm-4">
-                                <label for="ingredient">Ingrediente</label>
-                                <input type="text" class="form-control" name="ingrediente[]" placeholder="Ex: Farinha" aria-label="Ingredient">
-                            </div>
-                            <div class="col-sm-3">
-                                <label for="quantity">Quantidade</label>
-                                <input type="text" class="form-control" name="quantidade[]" placeholder="Ex: 1 cup" aria-label="Quantity">
-                            </div>
-                            <div class="col-sm-3">
-                                <label for="unit">Unidade</label>
-                                <input type="text" class="form-control" name="unidade[]" placeholder="Ex: Kg" aria-label="Unit">
-                            </div>
-                            <div class="col-sm-2">
-                                <button type="button" class="btn btn-danger" onclick="removeIngredient(this)">Remover</button>
-                            </div>
+                <div id="ingredientsSection">
+                    <h3>Ingredientes</h3>
+                    <div class="row g-3 ingredient-row">
+                        <div class="col-sm-4">
+                            <label for="ingredient">Ingrediente</label>
+                            <input type="text" class="form-control" name="ingredientes[]" placeholder="Ex: Farinha" aria-label="Ingredient">
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="quantity">Quantidade</label>
+                            <input type="text" class="form-control" name="quantidade[]" placeholder="Ex: 1 cup" aria-label="Quantity">
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="unit">Unidade</label>
+                            <input type="text" class="form-control" name="unidade[]" placeholder="Ex: Kg" aria-label="Unit">
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-danger" onclick="removeIngredient(this)">Remover</button>
                         </div>
                     </div>
-
-                    <button type="button" class="btn btn-success mt-3" onclick="addIngredient()">Adicionar Ingrediente</button>
-
-                    <!-- Submit Button -->
-                    <div class="d-grid gap-2 col-4 mx-auto mt-3">
-                        <button class="btn btn-dark" type="submit">Cadastrar</button>
-                    </div>
-                    </form>
                 </div>
+
+                <button type="button" class="btn btn-success mt-3" onclick="addIngredient()">Adicionar Ingrediente</button>
+
+                <!-- Submit Button -->
+                <div class="d-grid gap-2 col-4 mx-auto mt-3">
+                    <button class="btn btn-dark" type="submit">Cadastrar</button>
+                </div>
+       
             </div>
+    </form>
 
-            <script>
-                // JavaScript for dynamically adding/removing ingredient fields
-                function adicionaringrediente() {
-                    var ingredientsSection = document.getElementById('ingredientsSection');
-                    var newRow = ingredientsSection.querySelector('.ingredient-row').cloneNode(true);
-                    ingredientsSection.appendChild(newRow);
-                }
+    <script>
+        // JavaScript for dynamically adding/removing ingredient fields
+        function addIngredient() {
+            var ingredientsSection = document.getElementById('ingredientsSection');
+            var newRow = ingredientsSection.querySelector('.ingredient-row').cloneNode(true);
+            ingredientsSection.appendChild(newRow);
+        }
 
-                function removeringrediente(button) {
-                    var ingredientsSection = document.getElementById('ingredientsSection');
-                    var row = button.parentNode.parentNode;
-                    if (ingredientsSection.childElementCount > 1) {
-                        ingredientsSection.removeChild(row);
-                    } else {
-                        // Reset the fields if only one row is left
-                        var inputs = row.querySelectorAll('input');
-                        inputs.forEach(function(input) {
-                            input.value = '';
-                        });
-                    }
-                }
-            </script>
-        </body>
+        function removeIngredient(button) {
+            var ingredientsSection = document.getElementById('ingredientsSection');
+            var row = button.parentNode.parentNode;
+            if (ingredientsSection.childElementCount > 1) {
+                ingredientsSection.removeChild(row);
+            } else {
+                // Reset the fields if only one row is left
+                var inputs = row.querySelectorAll('input');
+                inputs.forEach(function(input) {
+                    input.value = '';
+                });
+            }
+        }
+    </script>
+</body>
 
-        </html>
+</html>
