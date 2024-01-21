@@ -81,16 +81,16 @@ $listareceitas = BuscarNoBD($sql);
             echo "<b><p>Fonte:</b><p>";
             echo $linha['fonte'];
 
-            echo "<b><p>Data de Publicação: </b><p>";
+            echo "<b><p>Data de Publicação:</b><p>";
             echo $linha['data'];
 
-            echo "<b><p>Ingrediente </b><p>";
+            echo "<b><p>Ingredientes</b><p>";
             echo $linha['ingredientes'];
 
-            echo "<b><p>Qntd: </b><p>";
+            echo "<b><p>Qntd:</b><p>";
             echo $linha['quantidade'];
 
-            echo "<b><p>Unidade: </b><p>";
+            echo "<b><p>Unidade:</b><p>";
             echo $linha['unidade'];
             
             echo '<br><br>';
