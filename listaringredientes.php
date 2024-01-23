@@ -54,6 +54,7 @@ $listareceitas = BuscarNoBD($sql);
     </nav>
 
 <br><br><hr>
+<a href='listareceitas.php' class="btn btn-outline-dark"> Voltar</a>
     <div class="lista">
     <?php
         foreach ($listareceitas as $linha) {
@@ -71,7 +72,7 @@ $listareceitas = BuscarNoBD($sql);
         }
         ?>
         </div>
-        "<a href='listareceitas.php'> Voltar </a>";
+
 
 </body>
 

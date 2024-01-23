@@ -39,6 +39,8 @@
             </div>
         </div>
     </nav>
+    <br><br><hr>
+    <a href='listareceitas.php' class="btn btn-outline-dark"> Voltar</a>
     <div class="container mt-5">
         <h2>Editar Dados</h2>
         <hr>
