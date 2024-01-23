@@ -32,18 +32,8 @@
                             <a class="nav-link active" aria-current="page" href="listareceitas.php">Listar Receitas</a>
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="listareceitas.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Menu Receitas
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="cadastrareceitas.php">Cadastrar</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Ainda não sei :c</a></li>
-                            </ul>
-                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="cadastrareceitas.php">Cadastrar Receita</a>
                     </ul>
                 </div>
             </div>

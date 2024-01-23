@@ -32,18 +32,8 @@
                             <a class="nav-link active" aria-current="page" href="listareceitas.php">Listar Receitas</a>
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="listareceitas.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Menu Receitas
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="cadastrareceitas.php">Cadastrar</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Ainda não sei :c</a></li>
-                            </ul>
-                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="cadastrareceitas.php">Cadastrar Receita</a>
                     </ul>
                 </div>
             </div>
@@ -102,15 +92,15 @@
                                 <label for="unit">Unidade</label>
                                 <input type="text" class="form-control" name="unidade[]" placeholder="Ex: Kg" aria-label="Unit">
                             </div>
+
                             <div class="col-sm-2">
-                                <button type="button" class="btn btn-danger" onclick="removerIngrediente(this)">Remover</button>
+                                <br><button type="button" class="btn btn-outline-dark" onclick="removerIngrediente(this)">Remover</button>
                             </div>
                         </div>
                     </div>
 
-                    <button type="button" class="btn btn-success mt-3" onclick="adicionarIngrediente()">Adicionar Ingrediente</button>
+                    <button type="button" class="btn btn-outline-dark" onclick="adicionarIngrediente()">Adicionar Ingrediente</button>
 
-                    <!-- Submit Button -->
                     <div class="d-grid gap-2 col-4 mx-auto mt-3">
                         <button class="btn btn-dark" type="submit">Cadastrar</button>
                     </div>
@@ -119,7 +109,7 @@
             </form>
 
             <script>
-                // JavaScript para adicionar/remover dinamicamente campos de ingredientes
+                // Adicionar/remover dinamicamente campos de ingredientes
                 function adicionarIngrediente() {
                     var secaoIngredientes = document.getElementById('secaoIngredientes');
                     var novaLinha = secaoIngredientes.querySelector('.ingredient-row').cloneNode(true);

@@ -43,31 +43,16 @@ $listareceitas = BuscarNoBD($sql);
                             <a class="nav-link active" aria-current="page" href="listareceitas.php">Listar Receitas</a>
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Menu Receitas
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="cadastrareceitas.php">Cadastrar</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Ainda não sei :c</a></li>
-                            </ul>
-                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="cadastrareceitas.php">Cadastrar Receita</a>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
-
-    <nav class="navbar navbar-dark bg-dark fixed-top">
-    </nav>
-    <h2>Editar Receitas</h2>
-    <hr>
-    <hr>
+    <br><br><hr>
     <div class="lista">
-    <?php
+        <?php
         foreach ($listareceitas as $linha) {
             echo "<b><p>Código da receita:</b><p>";
             echo $linha['codigo_receita'];
@@ -83,20 +68,16 @@ $listareceitas = BuscarNoBD($sql);
 
             echo "<b><p>Data de Publicação:</b><p>";
             echo $linha['data'];
-            
-            echo '<br><br>';
-            echo "<a href='editareceitas.php?codigo_receita={$linha['codigo_receita']};' >Editar Receita</a>";
-            echo '<br>';
 
-            echo "<a href='deletareceitas.php?codigo_receita={$linha['codigo_receita']};' >Excluir Receita</a>";
-            echo '<br><br>';
+            echo "<br><br><a href='listaringredientes.php?codigo_receita={$linha['codigo_receita']}' class='btn btn-outline-dark'>Consultar Ingredientes</a>";
+            echo "<br><br><a href='editareceitas.php?codigo_receita={$linha['codigo_receita']};' class='btn btn-outline-dark'>Editar Receita</a>";
+            echo "<a href='deletareceitas.php?codigo_receita={$linha['codigo_receita']};' class='btn btn-outline-dark' >Excluir Receita</a>";
 
-            echo "<a href='listaringredientes.php?codigo_receita={$linha['codigo_receita']}' >teste</a>";
-            echo '<br><br>';
+            echo "<hr>";
         }
         ?>
-        </div>
-       
+    </div>
+
 
 </body>
 

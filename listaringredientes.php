@@ -45,29 +45,15 @@ $listareceitas = BuscarNoBD($sql);
                             <a class="nav-link active" aria-current="page" href="listareceitas.php">Listar Receitas</a>
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Menu Receitas
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="cadastrareceitas.php">Cadastrar</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Ainda não sei :c</a></li>
-                            </ul>
-                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="cadastrareceitas.php">Cadastrar Receita</a>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
 
-    <nav class="navbar navbar-dark bg-dark fixed-top">
-    </nav>
-    <h2>Editar Receitas</h2>
-    <hr>
-    <hr>
+<br><br><hr>
     <div class="lista">
     <?php
         foreach ($listareceitas as $linha) {
@@ -82,11 +68,10 @@ $listareceitas = BuscarNoBD($sql);
             echo $linha['unidade'];
             
             echo '<br><br>';
-            echo "<a href='listareceitas.php'> Voltar </a>";
         }
         ?>
         </div>
-       
+        "<a href='listareceitas.php'> Voltar </a>";
 
 </body>
 
