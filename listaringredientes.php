@@ -1,9 +1,11 @@
 <?php
+var_dump($_GET);
 // Pegar/puxar conexão
 require_once('conexao.php');
 
+$codigo_receita = $_GET['codigo_receita'];
 // Comando dbo
-$sql = 'SELECT * FROM receitas';
+$sql = "SELECT * FROM ingredientes WHERE codigo_receita = $codigo_receita";
 
 $listareceitas = BuscarNoBD($sql);
 ?>
@@ -69,30 +71,18 @@ $listareceitas = BuscarNoBD($sql);
     <div class="lista">
     <?php
         foreach ($listareceitas as $linha) {
-            echo "<b><p>Código da receita:</b><p>";
-            echo $linha['codigo_receita'];
+            
+            echo "<b><p>Ingredientes</b><p>";
+            echo $linha['ingredientes'];
 
-            echo "<b><p>Nome:</b><p>";
-            echo $linha['nome'];
+            echo "<b><p>Qntd:</b><p>";
+            echo $linha['quantidade'];
 
-            echo "<b><p>Receita:</b><p>";
-            echo $linha['receita'];
-
-            echo "<b><p>Fonte:</b><p>";
-            echo $linha['fonte'];
-
-            echo "<b><p>Data de Publicação:</b><p>";
-            echo $linha['data'];
+            echo "<b><p>Unidade:</b><p>";
+            echo $linha['unidade'];
             
             echo '<br><br>';
-            echo "<a href='editareceitas.php?codigo_receita={$linha['codigo_receita']};' >Editar Receita</a>";
-            echo '<br>';
-
-            echo "<a href='deletareceitas.php?codigo_receita={$linha['codigo_receita']};' >Excluir Receita</a>";
-            echo '<br><br>';
-
-            echo "<a href='listaringredientes.php?codigo_receita={$linha['codigo_receita']}' >teste</a>";
-            echo '<br><br>';
+            echo "<a href='listareceitas.php'> Voltar </a>";
         }
         ?>
         </div>

@@ -91,7 +91,7 @@
                         <h3>Ingredientes</h3>
                         <div class="row g-3 ingredient-row">
                             <div class="col-sm-4">
-                                <label for="ingredient">Ingrediente</label>
+                                <label for="ingredient"></label>
                                 <input type="text" class="form-control" name="ingredientes[]" placeholder="Ex: Farinha" aria-label="Ingredient">
                             </div>
                             <div class="col-sm-3">
